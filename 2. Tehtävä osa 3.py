@@ -4,5 +4,5 @@ korkeus = input('Mikä on neliön korkeus ')
 ala = float(kanta) * float(korkeus)
 print('Neliön pinta-ala on: ' + str(ala))
 
-piiri = float(kanta) + float(korkeus) * 2
+piiri = float(kanta) * 2 + float(korkeus) * 2
 print('Neliön piiri on: ' + str(piiri))
