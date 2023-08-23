@@ -10,6 +10,6 @@ kokonais_kg = int(kiloina)
 grammat = (kiloina - kokonais_kg) * 1000
 
 print('Massa nykyaikaisilla mitoilla: ')
-print(f'{kokonais_kg}kg ja  {grammat:.0f}grammaa')
+print(f'{kokonais_kg}kg ja  {grammat:.2f}grammaa')
 
 
