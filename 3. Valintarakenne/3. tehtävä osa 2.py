@@ -10,3 +10,5 @@ elif luokka == 'C' or luokka == 'c' :
     print('C on ikkunaton hytti autokannen alapuolella.')
 else:
     print('Virheellinen hyttiluokka')
+
+
