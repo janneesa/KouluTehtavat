@@ -1,5 +1,7 @@
+import math
+
 sade = input('Ympyrän säde: ')
 
-ala = float(sade) ** 2 * 3.14159
+ala = float(sade) ** 2 * math.pi
 
-print('ympyrän pinta-ala on: ' + str(ala))
+print(f'ympyrän pinta-ala on: {ala:.2f}')
