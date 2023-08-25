@@ -1,6 +1,9 @@
-x=input('Anna nimesi: ')
-print('Terve '+x+'!')
+nimet = []
 
-i= int(input('numero1:'))
-p= int(input('numero2:'))
-print(i+p)
+etunimi = input("Anna ensimmäinen nimi tai lopeta painamalla Enter: ")
+while etunimi != "":
+    nimet.append(etunimi)
+    etunimi = input("Anna seuraava nimi tai lopeta painamalla Enter: ")
+
+for nimi in nimet:
+    print (f"Moi, {nimi}!")

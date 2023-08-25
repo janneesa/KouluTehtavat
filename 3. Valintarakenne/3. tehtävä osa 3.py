@@ -16,4 +16,7 @@ elif sex.upper() == 'F' and hemo <= 175:
     print('hemoglobiiniarvosi on normaali')
 elif sex.upper() == 'F' and hemo > 175:
     print('hemoglobiiniarvosi on korkea')
+else:
+    print('virheelliset arvot')
+
     
