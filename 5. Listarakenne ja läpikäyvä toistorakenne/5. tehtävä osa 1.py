@@ -1,10 +1,11 @@
 import random
 
-kuutiot = []
+maara = int(input('Montako kuutiota haluat heittää: '))
+summa = 0
 
-x = int(input('montako arpakuutiota haluat heittää: '))
+for x in range(maara):
+    luku = random.randint(1, 6)
+    summa = summa + luku
 
-kuutiot.append(x)
+print('summa on: ' + str(summa))
 
-for x in kuutiot:
-    print(random.randint(1, 6))
