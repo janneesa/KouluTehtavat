@@ -1,21 +1,21 @@
-lista = []  # Alustetaan tyhjä lista, johon tallennetaan luvut
+pienin = float('inf')
+suurin = float('-inf')
 
-while True:
-    luvut = input("Syötä luku. Tyhjä merkkijono suorittaa toiminnan: ")
+y=0
 
-    if luvut == "":
-        break  # Lopetetaan silmukka, kun käyttäjä syöttää tyhjän merkkijonon
+while y<1:
+    x = input('Anna luku: (tyhjä rivi lopettaa): ')
 
-    numero = float(luvut)
-    lista.append(numero)  # Lisätään luku listaan
+    if x == '':
+        y += 1
+        break
 
-if lista:
-    pienin = min(lista)
-    suurin = max(lista)
+    luku = float(x)
 
-    print(f"Pienin syötetty luku oli {pienin:.2f}")
-    print(f"Suurin syötetty luku oli {suurin:.2f}")
-else:
-    print("Et syöttänyt yhtään lukua.")
+    if luku < pienin:
+        pienin = luku
 
+    if luku > suurin:
+        suurin = luku
 
+print(f'pienin luku on: {pienin} ja suurin luku on: {suurin}')

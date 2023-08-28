@@ -1,20 +1,21 @@
-lista = []
+pienin = float('inf')
+suurin = float('-inf')
 
-while True:
-    luvut = input('Anna luku. Tyhjä rivi suorittaa toiminnon: ')
+y=0
 
-    if luvut == '':
-        break #lopettaa toiminnon
+while y<1:
+    x = input('Anna luku: (tyhjä rivi lopettaa): ')
 
-    numero = float(luvut)
-    lista.append(numero) # lisätään float luku listaan
+    if x == '':
+        y += 1
+        break
 
-if lista:
-    pienin = min(lista)
-    suurin = max(lista)
+    luku = float(x)
 
-    print(f'Pienin luku on {pienin:.2f}')
-    print(f'suurin luku on {suurin:.2f}')
+    if luku < pienin:
+        pienin = luku
 
-else:
-    print('ei lukuja')
+    if luku > suurin:
+        suurin = luku
+
+print(f'pienin luku on: {pienin} ja suurin luku on: {suurin}')
