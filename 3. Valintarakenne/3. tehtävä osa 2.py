@@ -1,14 +1,12 @@
 luokka = input('Mikä on hyttiluokkasi: LUX, A, B, C: ')
 
-if luokka == 'LUX' or luokka == 'lux':
+if luokka.upper() == 'LUX':
     print('LUX on parvekkeellinen hytti yläkannella.')
-elif luokka == 'A' or luokka == 'a':
+elif luokka.upper() == 'A':
     print('A on ikkunallinen hytti autokannen yläpuolella.')
-elif luokka == 'B' or luokka == 'b':
+elif luokka.upper() == 'B':
     print('B on ikkunaton hytti autokannen yläpuolella.')
-elif luokka == 'C' or luokka == 'c' :
+elif luokka.upper() == 'C':
     print('C on ikkunaton hytti autokannen alapuolella.')
 else:
     print('Virheellinen hyttiluokka')
-
-
