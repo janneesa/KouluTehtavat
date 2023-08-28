@@ -1,9 +1,9 @@
 pienin = float('inf')
 suurin = float('-inf')
 
-y=0
+y = 0
 
-while y<1:
+while y < 1:
     x = input('Anna luku: (tyhjä rivi lopettaa): ')
 
     if x == '':
