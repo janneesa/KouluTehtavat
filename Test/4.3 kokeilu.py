@@ -19,3 +19,4 @@ while y<1:
         suurin = luku
 
 print(f'pienin luku on: {pienin} ja suurin luku on: {suurin}')
+
