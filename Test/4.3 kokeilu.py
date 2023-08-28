@@ -1,22 +1,17 @@
-pienin = float('inf')
-suurin = float('-inf')
+pienin = None
+suurin = None
 
-y=0
+while True:
+    luku = input('Anna lukuja: (tyhjä rivi tulostaa pienimmän ja suurimman luvun): ')
 
-while y<1:
-    x = input('Anna luku: (tyhjä rivi lopettaa): ')
-
-    if x == '':
-        y += 1
+    if luku == '':
+        print(f'suurin luku on {suurin} ja pienin luku on {pienin}.')
         break
 
-    luku = float(x)
+    x = float(luku)
 
-    if luku < pienin:
-        pienin = luku
+    if pienin is None or x < pienin:
+        pienin = x
 
-    if luku > suurin:
-        suurin = luku
-
-print(f'pienin luku on: {pienin} ja suurin luku on: {suurin}')
-
+    if suurin is None or x > suurin:
+        suurin = x
