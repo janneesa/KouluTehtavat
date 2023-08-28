@@ -8,4 +8,3 @@ for x in range(maara):
     summa = summa + luku
 
 print('summa on: ' + str(summa))
-
