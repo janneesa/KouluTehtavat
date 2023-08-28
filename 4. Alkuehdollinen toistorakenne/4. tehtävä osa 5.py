@@ -7,27 +7,20 @@ x1 = input('Anna käyttäjätunnus: ')
 y1 = input('Anna salasana: ')
 
 
-while i>0:
-    if x1 == x and y1 == y:
-        print('oikein')
+while i > 0:
+    if i <= 0:
+        print('Pääsy evätty')
         break
+
     if x1 != x or y1 != y:
         print('väärin')
-        i = i -1
+        i = i - 1
         x1 = input('Anna käyttäjätunnus: ')
         y1 = input('Anna salasana: ')
-    if i<=0 :
-        print('pääsy evätty')
+
+    if x1 == x and y1 == y:
+        print('Tervetuloa')
         break
 
-
-
-
-
-
-
-
-
-
-
-
+if i <= 0:
+    print('Pääsy evätty')
