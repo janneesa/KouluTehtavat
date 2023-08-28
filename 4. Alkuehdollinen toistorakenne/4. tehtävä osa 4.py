@@ -12,5 +12,5 @@ while True:
         print('liian suuri arvaus')
         arvaus = int(input('arvaa uudestaan: '))
     elif arvaus == x:
-        print('oikein')
+        print('Oikein!')
         break
