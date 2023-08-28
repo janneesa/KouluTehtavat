@@ -1,11 +1,21 @@
 import random
 
-arpakuutioiden_lukumaara = int(input("Syötä arpakuutioiden lukumäärä: "))
-silmalukujen_summa = 0
+luku = random.randint(1, 100)
 
-for _ in range(arpakuutioiden_lukumaara):
-    silmaluku = random.randint(1, 6)
-    print(f"Heitto: {silmaluku}")
-    silmalukujen_summa += silmaluku
+arvaus = int(input('Arvaa mitä lukua ajattelen 1-100: '))
 
-print(f"Silmälukujen summa: {silmalukujen_summa}")
+x = 0
+
+while x<1:
+    if arvaus < luku:
+        print('Liian pieni arvaus.')
+        arvaus = int(input('Arvaa uudestaan :) '))
+
+    if arvaus > luku:
+        print('Liian suuri arvaus.')
+        arvaus = int(input('Arvaa uudestaan :) '))
+
+    else:
+        print('Oikein! Voitit pelin!')
+        x += 1
+

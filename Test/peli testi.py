@@ -1,19 +1,18 @@
 import random
 
-x = random.randint(1, 10)
+luku = random.randint(1, 100)
 
-arvaus = int(input('Mitä lukua ajattelen 1-10: '))
+arvaus = int(input('Arvaa mitä lukua ajattelen 1-100: '))
 
-maara = 1
-while True:
-    if arvaus < x:
-        print('liian pieni arvaus')
-        arvaus = int(input('arvaa uudestaan: '))
-        maara = maara + 1
-    elif arvaus > x:
-        print('liian suuri arvaus')
-        arvaus = int(input('arvaa uudestaan: '))
-        maara = maara + 1
-    elif arvaus == x:
-        print('Oikein! Arvauksia oli ' + str(maara) + 'kpl')
+while arvaus != luku:
+    if arvaus < luku:
+        print('Liian pieni arvaus.')
+        arvaus = int(input('Arvaa uudestaan :) '))
+
+    if arvaus > luku:
+        print('Liian suuri arvaus.')
+        arvaus = int(input('Arvaa uudestaan :) '))
+
+    else:
+        print('Oikein! Voitit pelin!')
         break
