@@ -1,22 +1,14 @@
-
-
-
-#todo muista kysyä opelta miksi yritykset > 3 toimii viiten yritykseen asti.
-#todo muista kysyä opelta miksi yritykset > 3 toimii viiten yritykseen asti.
-#todo muista kysyä opelta miksi yritykset > 3 toimii viiten yritykseen asti.
-
-
-
 tunnus = 'python'
 salis = 'rules'
 
 anna_tunnus = input('Anna käyttäjä tunnus: ')
 anna_salis = input('Anna salasana:')
 
-yritykset = 0
+yritykset = 1
 
 while anna_tunnus != tunnus and anna_salis != salis:
-    if yritykset > 3:
+    print(yritykset)
+    if yritykset > 4:
         print('Pääsy evätty.')
         break
 
