@@ -1,11 +1,15 @@
-lista = []
+vuosi = int(input('Anna vuosiluku: '))
 
-while True:
-    nimi = input('Anna nimi: ')
+if vuosi % 400 == 0 and vuosi % 100 == 0 or vuosi % 4 == 0 and vuosi % 100 != 0:
+    print('karkausvuosi')
+else:
+    print('Ei ole karkausvuosi')
 
-    if nimi == '':
-        break
-    lista.append(nimi)
 
-for nimi in lista:
-    print(nimi)
+if vuosi % 4 == 0 and vuosi % 100 != 0:
+    print('karkausvuosi')
+elif vuosi % 400 == 0 and vuosi % 100 == 0:
+    print('karkausvuosi')
+else:
+    print('ei ole')
+
