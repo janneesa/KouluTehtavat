@@ -14,11 +14,11 @@ print('Tällä ohjelmalla voit: hakea ja lisätä tietoja lentokentistä järjes
 toiminto = input('Haku, Lisäys, Lopeta: ') #määrätään toiminto
 
 while lopetus < 1:
-    if toiminto.lower() == 'lopeta' or toiminto.lower() == '': #lopetetaan tehtävä
+    if toiminto.lower() == 'lopeta' or toiminto == '': #lopetetaan tehtävä
         lopetus = 1
         print('Ohjelma sammutettu')
 
-    if toiminto.lower() == 'haku': #haetaan kenttää icao koodilla
+    elif toiminto.lower() == 'haku': #haetaan kenttää icao koodilla
         ICAO = input('Palaa syöttämällä tyhjä rivi.\nAnna ICAO: ')
         if ICAO == '':
             toiminto = 'paluu'
@@ -27,7 +27,7 @@ while lopetus < 1:
         else:
             haku(ICAO.upper())
 
-    if toiminto.lower() == 'lisäys': #lisätään icao ja kenttä
+    elif toiminto.lower() == 'lisäys': #lisätään icao ja kenttä
         ICAO = input('Palaa syöttämällä tyhjä rivi.\nSyötä ICAO: ')
         if ICAO == '':
             toiminto = 'paluu'
@@ -39,5 +39,9 @@ while lopetus < 1:
             toiminto = 'paluu'
 
 
-    if toiminto.lower() == 'paluu':
+    elif toiminto.lower() == 'paluu':
+        toiminto = input('Haku, Lisäys, Lopeta: ')  # määrätään toiminto
+
+    else:
+        print('Virheellinen toiminto. ')
         toiminto = input('Haku, Lisäys, Lopeta: ')  # määrätään toiminto
