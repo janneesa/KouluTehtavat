@@ -1,14 +1,14 @@
 x = "python"
 y = 'rules'
 
-i = 4
+i = 5
 
 x1 = input('Anna käyttäjätunnus: ')
 y1 = input('Anna salasana: ')
 
 
 while i > 0:
-    if i <= 0:
+    if i == 1:
         print('Pääsy evätty')
         break
 
@@ -22,5 +22,5 @@ while i > 0:
         print('Tervetuloa')
         break
 
-if i <= 0:
+if i < 1:
     print('Pääsy evätty')
