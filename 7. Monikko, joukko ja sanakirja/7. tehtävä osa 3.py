@@ -10,27 +10,28 @@ def add(icao, kentta): #funktio joka lisää icaon ja kentän
     print(f'{icao} : {kentta} lisätty.')
     return
 
+print('Tällä ohjelmalla voit: hakea ja lisätä tietoja lentokentistä järjestelmään.\nAlla on lueteltu käytettävät toiminnot')
 toiminto = input('Haku, Lisäys, Lopeta: ') #määrätään toiminto
 
 while lopetus < 1:
-    if toiminto.lower() == 'lopeta': #lopetetaan tehtävä
+    if toiminto.lower() == 'lopeta' or toiminto.lower() == '': #lopetetaan tehtävä
         lopetus = 1
         print('Ohjelma sammutettu')
 
     if toiminto.lower() == 'haku': #haetaan kenttää icao koodilla
-        ICAO = input('Palaa syöttämällä tyhjä rivi. Anna ICAO: ')
+        ICAO = input('Palaa syöttämällä tyhjä rivi.\nAnna ICAO: ')
         if ICAO == '':
             toiminto = 'paluu'
-        elif ICAO not in lentokentat:
+        elif ICAO.upper() not in lentokentat:
             print('ICAO koodia ei löydy')
         else:
             haku(ICAO.upper())
 
     if toiminto.lower() == 'lisäys': #lisätään icao ja kenttä
-        ICAO = input('Palaa syöttämällä tyhjä rivi. Syötä ICAO: ')
+        ICAO = input('Palaa syöttämällä tyhjä rivi.\nSyötä ICAO: ')
         if ICAO == '':
             toiminto = 'paluu'
-        KENTTA = input('Palaa syöttämällä tyhjä rivi. Syötä lentokentän nimi: ')
+        KENTTA = input('Palaa syöttämällä tyhjä rivi.\nSyötä lentokentän nimi: ')
         if KENTTA == '':
             toiminto = 'paluu'
         else:
