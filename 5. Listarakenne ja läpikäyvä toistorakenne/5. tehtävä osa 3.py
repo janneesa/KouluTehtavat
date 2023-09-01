@@ -8,5 +8,5 @@ for x in range(2, luku):
         print('ei ole')
         break
 
-else:
+if luku != 1:
     print('luku on alkuluku')
