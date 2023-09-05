@@ -9,4 +9,3 @@ while True:
     if maara < 0:
         break
     muuntaja(maara)
-

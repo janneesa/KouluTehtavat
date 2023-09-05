@@ -1,6 +1,3 @@
-#todo tee tästä simppelimpi
-#todo tyhjän rivin täytyy lopettaa toiminto
-
 numerot = []  #luodaan tyhjä lista
 
 luku = (input('Syötä luku: (Tyhjä rivi lopettaa): '))

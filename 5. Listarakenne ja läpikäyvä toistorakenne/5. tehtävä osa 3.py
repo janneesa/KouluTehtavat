@@ -1,12 +1,17 @@
 luku = int(input('Anna luku: '))
 
+ei = False
+
 if luku == 1:
-    print(f'{luku} ei ole alkuluku')
+    print(f'{luku} Ei ole alkuluku')
 
 for x in range(2, luku):
     if luku % x == 0:
-        print('ei ole')
+        print('Ei ole alkuluku')
+        ei = True
         break
 
-if luku != 1:
-    print('luku on alkuluku')
+if ei == False and luku != 1:
+    print('On alkuluku')
+
+
