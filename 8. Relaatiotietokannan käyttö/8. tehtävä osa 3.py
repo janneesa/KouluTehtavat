@@ -9,23 +9,22 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
-maakoodi = input('Anna maakoodi: ')
-
-def tyyppihakuri(tyyppi):
-    sql = 'SELECT airport.type FROM airport '
-    sql += f"WHERE airport.iso_country = '{maakoodi}' AND TYPE = '{tyyppi}'"
+def koordinaattori(icao):
+    sql = 'SELECT latitude_deg, longitude_deg FROM airport '
+    sql += f"WHERE airport.ident = '{icao}'"
     #print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
-    tulos = kursori.fetchall()
+    koordinaatit = kursori.fetchall()
+    print(koordinaatit)
     if kursori.rowcount > 0:
-        print(f"{tyyppi} kenttiä on {len(tulos)}")
-    elif kursori.rowcount == 0:
-        print(f'{tyyppi} kenttiä on nolla')
+        return koordinaatit
 
-tyyppihakuri("heliport")
-tyyppihakuri("small_airport")
-tyyppihakuri("medium_airport")
-tyyppihakuri('large_airport')
-tyyppihakuri('seaplane_base')
-tyyppihakuri('closed')
+
+icao1 = input('Anna ICAO: ')
+kentta1 = koordinaattori(icao1)
+icao2 = input('Anna toinen ICAO: ')
+kentta2 = koordinaattori(icao2)
+
+from geopy import distance
+print(f'Etäisyys on {distance.distance(kentta1, kentta2).km:.2f}km')
