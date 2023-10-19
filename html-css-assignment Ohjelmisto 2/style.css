@@ -104,21 +104,54 @@ video {
     backdrop-filter: hue-rotate(30deg);
     text-align: center;
     max-width: 30%; /* Määritä tuotelaatikoiden leveys siten, että ne ovat vierekkäin */
-    padding: 10px;
+    padding: 1rem;
     border: 1px solid #ccc;
-    margin: 10px;
+    margin: 1rem;
 }
 
-
+/* Tuote laatikko kuva */
 .product_box img {
     max-width: 58%;
     object-fit: cover;
 }
 
-
+/* Tuote laatikko teksti */
 .product_box p {
     margin-top: 1rem;
     font-size: xx-large;
     color: white;
     text-align: left;
 }
+
+/* Contact sivu */
+.contact_page {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+}
+
+/* Yhteystiedot otsikko */
+.contact h1 {
+    margin-bottom: 5rem;
+}
+
+/* Yhteystiedot */
+.contact {
+    font-size: xx-large;
+    color: white;
+}
+
+
+.map_pic {
+    max-width: 50%;
+    float: right;
+    margin-left: 10rem;
+}
+
+.map_pic img {
+    margin-top: 5rem;
+    max-width: 100%;
+}
+
+
+
