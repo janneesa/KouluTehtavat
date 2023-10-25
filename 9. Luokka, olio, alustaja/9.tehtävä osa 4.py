@@ -1,4 +1,5 @@
 import random
+from prettytable import PrettyTable
 
 kilpa_autot = []
 
@@ -31,18 +32,23 @@ kilpailu = True
 aika = 0
 
 while kilpailu:
+
     aika += 1
     for auto in kilpa_autot:
         kiihdytys = random.randint(-10, 15)
         auto.kiihdyta(kiihdytys)
         auto.kulje(1)
-        print(f"{auto.rekisteritunnus}: Nopeus: {auto.tamanhetkinen_nopeus}km/h, Kuljettu matka {auto.kuljettu_matka} km.")
 
     for auto in kilpa_autot:
         if auto.kuljettu_matka >= 10000:
             kilpailu = False
-            #print(f"{auto.rekisteritunnus}: Nopeus: {auto.tamanhetkinen_nopeus}km/h, Kuljettu matka {auto.kuljettu_matka} km.")
+
+
+taulu = PrettyTable()
+
+taulu.field_names = ['Rekisterinumero', 'Huippunopeus', 'Hetkellinen nopeus', 'Kuljettu matka']
 
 for auto in kilpa_autot:
-    print(f'Rekisterinumero: {auto.rekisteritunnus}, Huippunopeus: {auto.huippunopeus}km/h, Hetkellinen nopeus: {auto.tamanhetkinen_nopeus}km/h, Kuljettu matka: {auto. kuljettu_matka}km')
+    taulu.add_row([auto.rekisteritunnus, str(auto.huippunopeus) + 'km/h', str(auto.tamanhetkinen_nopeus) + 'km/h', str(auto. kuljettu_matka) + 'km'])
 
+print(taulu)
