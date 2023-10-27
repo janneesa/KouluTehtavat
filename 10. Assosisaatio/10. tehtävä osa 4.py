@@ -70,14 +70,14 @@ for numero in range(10):
 
 kilpailu = Kilpailu('Suuri romuralli', 8000, kilpa_autot)
 
-for auto in kilpa_autot:
-    if auto.kuljettu_matka >= 10000:
-        kilpailu = False
 
 
 kisa = True
 
 while kisa == True:
+
+    if kilpailu.kilpailu_ohi() == True:
+        break
 
     kilpailu.tunti_kuluu()
 
