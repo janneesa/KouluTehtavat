@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Testing JavaScript</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<h1>Greeting</h1>
-<p id="target"></p>
+<button>Click me</button>
 <script>
-    'use strict';
-            let heads = 0, tails = 0; // let, because the values of the variables change later
-        while (heads + tails < 100) {
-            const r = Math.random();
-            if (r>0.5)
-                heads++;
-            else
-                tails++;
-        }
-        console.log('Heads: ' + heads + ', tails: ' + tails)
+const button = document.querySelector('button');
+button.addEventListener('click', function(evt){
+  alert('Element ' + evt.currentTarget.tagName + ' was clicked');
+  console.log(evt);
+});
 </script>
 </body>
 </html>
