@@ -93,3 +93,41 @@ const picArray = [
 ];
 
 // add your code here
+
+const section_element = document.getElementById('pictures')
+
+for (let kuva of picArray){
+
+  // Article elementti
+  const article_element = document.createElement('article')
+  article_element.classList.add('card')
+
+  // h2 elementti
+  const h2_element = document.createElement('h2');
+  h2_element.innerText = kuva.title
+
+  // figure elementti
+  const figure_element = document.createElement('figure');
+
+  //p elementti
+  const p_element = document.createElement('p')
+  p_element.innerText = kuva.description
+
+  // image elementti
+  const image_element = document.createElement('img');
+  image_element.src = kuva.image.medium
+
+  // figcaption elementti
+  const figcaption_element = document.createElement('figcaption');
+  figcaption_element.innerText = kuva.caption
+
+
+  // lisätään elementit toistensa sisään niin ne näkyvät html
+  figure_element.appendChild(image_element)
+  figure_element.appendChild(figcaption_element)
+  h2_element.appendChild(figure_element)
+  h2_element.appendChild(p_element)
+  article_element.appendChild(h2_element)
+  section_element.appendChild(article_element)
+}
+
