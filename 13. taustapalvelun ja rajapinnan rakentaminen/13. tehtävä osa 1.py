@@ -1,40 +1,29 @@
-from flask import Flask, Response
-import json
+from flask import Flask
 
 app = Flask(__name__)
-@app.route('/summa/<luku1>/<luku2>')
-def summa(luku1, luku2):
-    try:
-        luku1 = float(luku1)
-        luku2 = float(luku2)
-        summa = luku1+luku2
+@app.route('/alkuluku/<int:luku>')
+def alkuluku(luku):
 
-        tilakoodi = 200
-        vastaus = {
-            "status": tilakoodi,
-            "luku1": luku1,
-            "luku2": luku2,
-            "summa": summa
-        }
+    on_alkuluku = True
 
-    except ValueError:
-        tilakoodi = 400
-        vastaus = {
-            "status": tilakoodi,
-            "teksti": "Virheellinen yhteenlaskettava"
-        }
+    if luku == 1:
+        on_alkuluku = False
 
-    jsonvast = json.dumps(vastaus)
-    return Response(response=jsonvast, status=tilakoodi, mimetype="application/json")
+    else:
+        for i in range(2, luku):
+            if luku % i == 0:
+                on_alkuluku = False
+                break
+            else:
+                on_alkuluku = True
 
-@app.errorhandler(404)
-def page_not_found(virhekoodi):
     vastaus = {
-        "status" : "404",
-        "teksti" : "Virheellinen päätepiste"
+        "Number" : luku,
+        "isPrime" : on_alkuluku
     }
-    jsonvast = json.dumps(vastaus)
-    return Response(response=jsonvast, status=404, mimetype="application/json")
+
+    return vastaus
 
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
+
