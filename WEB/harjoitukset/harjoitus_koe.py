@@ -12,11 +12,12 @@ class Student(Person):
         self.student_number = student_number
 
     def plot(self):
-        print(f'My name is {self.first_name} {self.last_name} and my student number is {self.student_number}')
+        super().plot()
+        print(f'and my student number is {self.student_number}')
 
 
-p1 = Person('james', 'bond')
-s1 = Student('Jhonny', 'English', 321)
+p1 = Person('James', 'Bond')
+s1 = Student('Johnny', 'English', 321)
 
 p1.plot()
 s1.plot()

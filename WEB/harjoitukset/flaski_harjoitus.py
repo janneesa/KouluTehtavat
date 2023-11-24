@@ -1,18 +1,15 @@
-from flask import Flask
+from flask import Flask, Response
 
 app = Flask(__name__)
-@app.route('/summa/<luku1>/<luku2>')
-def kaiku(luku1, luku2):
-
-    summa = int(luku1) + int(luku2)
-
+@app.route('/summa/<int:luku1>/<int:luku2>')
+def summa(luku1, luku2):
     vastaus = {
-        "luku1" : luku1,
-        "luku2" : luku2,
-        "summa" : summa
+        'luku1' : luku1,
+        'luku2' : luku2,
+        'summa' : luku1 + luku2
     }
 
     return vastaus
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, host='127.0.0.1', port=3000)
+    app.run(use_reloader=True, host='localhost', port=3000)
