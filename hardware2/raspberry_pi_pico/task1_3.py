@@ -28,14 +28,14 @@ Y_COORD = 32
 
 
 def go_right():
-    global X_COORD, Y_COORD  # Declare X_COORD and Y_COORD as global
+    global X_COORD, Y_COORD
     oled.pixel(X_COORD, Y_COORD, 1)
     oled.show()
     X_COORD += 1
 
 
 def go_left():
-    global X_COORD, Y_COORD  # Declare X_COORD and Y_COORD as global
+    global X_COORD, Y_COORD
     oled.pixel(X_COORD, Y_COORD, 1)
     oled.show()
     X_COORD -= 1
@@ -52,9 +52,11 @@ while True:
             going_right = True
 
     if not left_button.value():
-        Y_COORD += 1
+        if Y_COORD < OLED_HEIGHT - 1:
+            Y_COORD += 1
     elif not right_button.value():
-        Y_COORD -= 1
+        if not Y_COORD < 1:
+            Y_COORD -= 1
     elif not reset_button.value():
         oled.fill(0)
         X_COORD = 0
